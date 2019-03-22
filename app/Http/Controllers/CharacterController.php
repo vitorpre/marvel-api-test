@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Api\Marvel\Character;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Cache;
 
 class CharacterController extends Controller
 {
@@ -21,9 +22,13 @@ class CharacterController extends Controller
      */
     public function index()
     {
-        $characters = $this->characterModel->all();
+        //$characters = $this->characterModel->all();
 
         $character = $this->characterModel->find(1011334);
+
+        Cache::put(1011334, $character, 10);
+
+        dd($character);
 
         return view('characters.index', array('characters' => $characters->data->results));
     }
