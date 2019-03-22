@@ -24,9 +24,10 @@ class CharacterController extends Controller
     {
         //$characters = $this->characterModel->all();
 
-        $character = $this->characterModel->find(1011334);
+//        $character = $this->characterModel->find(1011334);
+        $character = Cache::get(1011334);
 
-        Cache::put(1011334, $character, 10);
+        //Cache::put(1011334, $character, 10);
 
         dd($character);
 
