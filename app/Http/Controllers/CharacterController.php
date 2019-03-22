@@ -25,8 +25,6 @@ class CharacterController extends Controller
 
         $character = $this->characterModel->find(1011334);
 
-       dd($character);
-
         return view('characters.index', array('characters' => $characters->data->results));
     }
 
