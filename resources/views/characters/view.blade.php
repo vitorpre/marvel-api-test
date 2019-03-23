@@ -4,16 +4,17 @@
 
 @section('content')
 
-    <div class="row text-center">
-        <img src="{{ $character->thumbnail->path . '.' . $character->thumbnail->extension }}" class="mb-3" />
+    <div class="row text-center align-content-center">
+        <img src="{{ $character->thumbnail->path . '.' . $character->thumbnail->extension }}"
+             style="max-height: 350px;" class="img-thumbnail align-content-center mb-3" />
 
-        <section class="details mb-3">
-            <h2 class="card-title mb-1">{{ $character->name }}</h2>
+        <section class="details row mb-3">
+            <h2 class="card-title mb-2">{{ $character->name }}</h2>
             <p class="card-text">{{ $character->description }}</p>
         </section>
 
-        <section class="comics mb-3">
-            <h2 class="mb-1">Comics</h2>
+        <section class="comics row mb-3">
+            <h2 class="mb-2">Comics</h2>
 
             <ul class="list-group list-group-flush">
                 @foreach($character->comics->items as $comic)
@@ -23,8 +24,8 @@
 
         </section>
 
-        <section class="series mb-3">
-            <h2 class="mb-1">Series</h2>
+        <section class="series row mb-3">
+            <h2 class="mb-2">Series</h2>
 
             <ul class="list-group list-group-flush">
                 @foreach($character->series->items as $serie)

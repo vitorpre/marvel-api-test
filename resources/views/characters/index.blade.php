@@ -15,12 +15,6 @@
                     </div>
                 </div>
             </a>
-
-            {{--<div class="col-md-3 text-center">--}}
-                {{--<img class="img-thumbnail" style="max-height: 200px;"--}}
-                     {{--src="{{ $character->thumbnail->path . '.' . $character->thumbnail->extension }}" />--}}
-                {{--<p class="text-center">{{ $character->name }}</p>--}}
-            {{--</div>--}}
         @endforeach
     </div>
 
