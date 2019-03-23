@@ -22,14 +22,7 @@ class CharacterController extends Controller
      */
     public function index()
     {
-        //$characters = $this->characterModel->all();
-
-//        $character = $this->characterModel->find(1011334);
-        $character = Cache::get(1011334);
-
-        //Cache::put(1011334, $character, 10);
-
-        dd($character);
+        $characters = $this->characterModel->all();
 
         return view('characters.index', array('characters' => $characters->data->results));
     }
@@ -61,9 +54,11 @@ class CharacterController extends Controller
      * @param  \App\Models\Api\Marvel\Character  $character
      * @return \Illuminate\Http\Response
      */
-    public function show(Character $character)
+    public function show($id)
     {
-        //
+        $character = $this->characterModel->find($id);
+
+        return view('characters.view', array('character' => $character));
     }
 
     /**
