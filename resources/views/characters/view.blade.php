@@ -18,7 +18,7 @@
 
             <ul class="list-group list-group-flush col-12">
                 @foreach($character->comics->items as $comic)
-                    <a href="{{ $comic->resourceURI }}"><li class="list-group-item">{{ $comic->name }}</li></a>
+                    <li class="list-group-item">{{ $comic->name }}</li>
                 @endforeach
             </ul>
 
@@ -29,7 +29,7 @@
 
             <ul class="list-group list-group-flush col-12">
                 @foreach($character->series->items as $serie)
-                    <a href="{{ $serie->resourceURI }}"><li class="list-group-item">{{ $serie->name }}</li></a>
+                    <li class="list-group-item">{{ $serie->name }}</li>
                 @endforeach
             </ul>
 
