@@ -5,15 +5,10 @@
         <script src="{{ url('js/app.js') }}"></script>
 
     </head>
-    <body style="">
+    <body style="background-image: url('{{ url('/img/background-marvel2.jpg') }}'); background-color: #FF1E22; background-attachment: fixed">
 
         <div>
-            <a href="{{ url('/characters') }}"><h1 style="font-family: 'Helvetica';
-    letter-spacing: 2.2rem;
-    text-align: center;
-    color: white;
-    font-size: 8rem;
-    text-shadow: #555 2px 2px 7px;">MARVEL</h1></a>
+            <a class="title" href="{{ url('/characters') }}"><h1>MARVEL</h1></a>
         </div>
 
 

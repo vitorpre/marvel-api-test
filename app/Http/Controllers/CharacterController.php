@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\Characters\ListCharacterRequest;
 use App\Models\Api\Marvel\Character;
 use Illuminate\Http\Request;
+use Illuminate\Pagination\LengthAwarePaginator;
 use Illuminate\Support\Facades\Cache;
 
 class CharacterController extends Controller
@@ -20,11 +22,27 @@ class CharacterController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(ListCharacterRequest $request)
     {
-        $characters = $this->characterModel->all();
+        $page = $request->get('page', 1);
 
-        return view('characters.index', array('characters' => $characters->data->results));
+        $parametersSearch = array(
+            'limit' => $request->get('limit', 100),
+            'offset' => $request->get('limit', 100) * ($page - 1),
+            'nameStartsWith' => $request->get('nameStartsWith')
+        );
+
+
+        $characters = $this->characterModel->all($parametersSearch);
+
+        $charactersPaginator = new LengthAwarePaginator($characters->data->results,
+            $characters->data->total,
+            $characters->data->limit,
+            $page,
+            array('path' => url('/characters'),
+                'query' => ['limit' => $characters->data->limit, 'nameStartsWith' => $request->get('nameStartsWith')])  );
+
+        return view('characters.index', array('characters' => $charactersPaginator));
     }
 
     /**

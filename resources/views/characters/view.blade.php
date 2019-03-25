@@ -9,12 +9,12 @@
              style="max-height: 350px;" class="img-thumbnail align-content-center mb-3" />
 
         <section class="details row mb-3">
-            <h2 class="card-title mb-2 col-12">{{ $character->name }}</h2>
-            <p class="card-text col-12" >{{ $character->description }}</p>
+            <h2 class="card-title mb-2 col-12 text-white">{{ $character->name }}</h2>
+            <p class="card-text col-12 text-white" >{{ $character->description }}</p>
         </section>
 
         <section class="comics row mb-3">
-            <h2 class="mb-2 col-12">Comics</h2>
+            <h2 class="mb-2 col-12 text-white">Comics</h2>
 
             <ul class="list-group list-group-flush col-12">
                 @foreach($character->comics->items as $comic)
@@ -25,7 +25,7 @@
         </section>
 
         <section class="series row mb-3">
-            <h2 class="mb-2 col-12">Series</h2>
+            <h2 class="mb-2 col-12 text-white">Series</h2>
 
             <ul class="list-group list-group-flush col-12">
                 @foreach($character->series->items as $serie)

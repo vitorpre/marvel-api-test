@@ -6,11 +6,11 @@ use Illuminate\Support\Facades\Cache;
 
 class Character
 {
-    public function all() {
+    public function all(array $parameters = array()) {
 
         $url = '/v1/public/characters';
 
-        $parameters = array();
+//        $parameters = array();
 //        $parameters['nameStartsWith'] = 'jean';
 
         try {

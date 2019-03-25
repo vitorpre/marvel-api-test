@@ -10660,3 +10660,23 @@ a.text-dark:focus {
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
 }
 
+body {
+  font-family: "Helvetica";
+}
+
+a.title {
+  text-decoration: none;
+  letter-spacing: 2.2rem;
+  text-align: center;
+  color: white;
+  text-shadow: #555 2px 2px 7px;
+}
+
+a.title h1 {
+  font-size: 8rem;
+}
+
+.card {
+  color: #666;
+}
+
