@@ -10,9 +10,6 @@ class Character
 
         $url = '/v1/public/characters';
 
-//        $parameters = array();
-//        $parameters['nameStartsWith'] = 'jean';
-
         try {
             $characters = ApiRequest::make($url, 'GET', $parameters);
         } catch(\Exception $e) {

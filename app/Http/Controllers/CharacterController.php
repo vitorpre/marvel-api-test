@@ -27,8 +27,8 @@ class CharacterController extends Controller
         $page = $request->get('page', 1);
 
         $parametersSearch = array(
-            'limit' => $request->get('limit', 100),
-            'offset' => $request->get('limit', 100) * ($page - 1),
+            'limit' => $request->get('limit', 20),
+            'offset' => $request->get('limit', 20) * ($page - 1),
             'nameStartsWith' => $request->get('nameStartsWith')
         );
 
